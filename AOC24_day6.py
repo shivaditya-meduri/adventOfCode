@@ -26,7 +26,7 @@ def sol1_bruteforce(inp):
     return visited
 def process_input(inp):
     return [list(i) for i in inp.split("\n") if i!=""]
-print(len(sol1_bruteforce(test_input)))
+
 def loop_detected(inp):
     inp_map = copy.deepcopy(inp)
     height, width = len(inp_map), len(inp_map[0])
@@ -76,4 +76,16 @@ def sol2_bruteforce(inp):
             possible_obstacle_positions.append([x, y])
     return possible_obstacle_positions
 
+test_input = """....#.....
+.........#
+..........
+..#.......
+.......#..
+..........
+.#..^.....
+........#.
+#.........
+......#..."""
+test_input = process_input(test_input)
+print(len(sol1_bruteforce(test_input)))
 print(len(sol2_bruteforce(test_input)))
